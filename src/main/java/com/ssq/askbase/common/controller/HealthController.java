@@ -10,6 +10,6 @@ public class HealthController {
 
     @GetMapping("/api/health")
     public ApiResponse< String> health() {
-        return ApiResponse.success("OK");
+        return ApiResponse.success("ok");
     }
 }

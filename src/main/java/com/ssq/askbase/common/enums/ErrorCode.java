@@ -16,8 +16,14 @@ public enum ErrorCode {
     NOT_FOUND(404, "请求资源不存在"),
 
     BUSINESS_ERROR(5001, "业务异常"),
-    SYSTEM_ERROR(5002, "系统异常");
+    SYSTEM_ERROR(5002, "系统异常"),
 
+    // 用户相关错误码 (51xx 系列)
+    USER_EXIST(5100, "用户名已存在"),
+    USER_NOT_FOUND(5101, "用户不存在"),
+    PASSWORD_ERROR(5102, "密码错误"),
+    ACCOUNT_DISABLED(5103, "账号已被禁用"),
+    USER_NOT_LOGIN(5104, "用户未登录");
 
 
     private final Integer code;

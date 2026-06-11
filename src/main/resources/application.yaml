@@ -1,5 +1,5 @@
-service:
-  post:8080
+server:
+  port: 8080
 
 spring:
   application:
@@ -8,9 +8,14 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/askbase
-    username: askbase
-    password: 123456
+    username: postgres
+    password: postgres
 
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
+
+askbase:
+  jwt:
+      secret: K8mNpQrS2vX9wYzA3bCdEfGhIjKlMnOpQrStUvWxYz0123456789ABCDEFGH+/IJKLMNOPQRSTUVWXYZ
+      expire-seconds: 86400

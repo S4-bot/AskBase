@@ -18,7 +18,11 @@ public class ApiResponse<T> {
     private T data;
 
     public static <T> ApiResponse<T> success(T data){
-        return new ApiResponse(ErrorCode.SUCCESS.getCode(),ErrorCode.SUCCESS.getMessage(),data);
+        return new ApiResponse<>(ErrorCode.SUCCESS.getCode(),ErrorCode.SUCCESS.getMessage(),data);
+    }
+
+    public static <T> ApiResponse<T> success() {
+        return new ApiResponse<>(ErrorCode.SUCCESS.getCode(), ErrorCode.SUCCESS.getMessage(), null);
     }
 
     public static <T> ApiResponse<T> fail(Integer code,String message){
