@@ -1,5 +1,6 @@
 package com.ssq.askbase.common.response;
 
+import com.ssq.askbase.common.enums.ErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,10 +18,16 @@ public class ApiResponse<T> {
     private T data;
 
     public static <T> ApiResponse<T> success(T data){
-        return new ApiResponse(200,"success",data);
+        return new ApiResponse(ErrorCode.SUCCESS.getCode(),ErrorCode.SUCCESS.getMessage(),data);
     }
 
     public static <T> ApiResponse<T> fail(Integer code,String message){
         return new ApiResponse<>(code,message,null);
     }
+
+    public static <T> ApiResponse<T> fail(ErrorCode errorCode){
+        return new ApiResponse<>(errorCode.getCode(),errorCode.getMessage(),null);
+    }
+
+
 }
