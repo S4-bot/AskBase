@@ -23,8 +23,9 @@ public enum ErrorCode {
     USER_NOT_FOUND(5101, "用户不存在"),
     PASSWORD_ERROR(5102, "密码错误"),
     ACCOUNT_DISABLED(5103, "账号已被禁用"),
-    USER_NOT_LOGIN(5104, "用户未登录");
+    USER_NOT_LOGIN(5104, "用户未登录"),
 
+    UPDATE_ERROR(5201, "更新失败");
 
     private final Integer code;
     private final String message;

@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ApiResponse<Void> handleException(Exception e) {
-        log.error("系统异常", e);
+        log.error("系统异常: {}", e.getMessage(), e);
         return ApiResponse.fail(ErrorCode.SYSTEM_ERROR);
     }
 }

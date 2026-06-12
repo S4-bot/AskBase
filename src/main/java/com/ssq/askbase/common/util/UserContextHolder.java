@@ -19,10 +19,11 @@ public final class UserContextHolder {
         }
 
         Object principal = authentication.getPrincipal();
-        if (principal == null || ANONYMOUS_USER.equals(principal) || !(principal instanceof CurrentUser currentUser)) {
+        if (principal == null || ANONYMOUS_USER.equals(principal) || !(principal instanceof CurrentUser)) {
             throw new BusinessException(ErrorCode.UNAUTHORIZED);
         }
 
+        CurrentUser currentUser = (CurrentUser) principal;
         if (currentUser.getUserId() == null) {
             throw new BusinessException(ErrorCode.UNAUTHORIZED);
         }
